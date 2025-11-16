@@ -116,8 +116,8 @@ func GetFeed(page int, pageSize int) (*FeedResponse, error) {
 
 	response := &FeedResponse{
 		Stats: Stats{
-			URL:  fmt.Sprintf("/api/v1/feed?page=%d", page),
-			Time: processingTime,
+			URL:         fmt.Sprintf("/api/v1/feed?page=%d", page),
+			Performance: processingTime,
 		},
 		Feed: feed,
 	}

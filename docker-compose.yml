@@ -1,0 +1,24 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: virk_api
+    ports:
+      - "8080:8080"
+    environment:
+      - DB_USER=${DB_USER:-root}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_HOST=${DB_HOST:-localhost}
+      - DB_PORT=${DB_PORT:-3306}
+      - DB_NAME=${DB_NAME:-virk2}
+      - PORT=${PORT:-8080}
+    restart: unless-stopped
+    networks:
+      - virk_network
+    # If you want to use the host's database, use host networking instead:
+    # network_mode: "host"
+
+networks:
+  virk_network:
+    driver: bridge

@@ -1,0 +1,29 @@
+# Binaries
+bin/
+
+# Environment files
+.env
+
+# Git
+.git/
+.gitignore
+
+# Logs
+log.txt
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# Build artifacts
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Test files
+*_test.go
+
+# Documentation
+README.md
