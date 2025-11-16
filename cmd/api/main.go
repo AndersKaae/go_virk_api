@@ -39,6 +39,7 @@ func main() {
 	http.HandleFunc("/api/stats/database", handlers.GetDatabaseStats)
 	http.HandleFunc("/api/stats/table", handlers.GetTableStats)
 	http.HandleFunc("/api/v1/feed", handlers.GetFeed)
+	http.HandleFunc("/api/v1/company_info", handlers.GetCompanyInfo)
 
 	// Start server
 	addr := fmt.Sprintf(":%s", port)

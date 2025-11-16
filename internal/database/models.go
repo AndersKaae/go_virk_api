@@ -26,3 +26,14 @@ type CapitalIncrease struct {
 	Capital   float64 `json:"capital"`
 	ValidFrom string  `json:"validFrom"` // YYYY-MM-DD format
 }
+
+// CompanyInfoResponse represents the company_info endpoint response
+type CompanyInfoResponse struct {
+	Performance string  `json:"performance"`
+	CVR         string  `json:"cvr"`
+	Name        string  `json:"name"`
+	Start       string  `json:"start"`
+	Branchekode string  `json:"branchekode"`
+	Website     *string `json:"website"`
+	Address     string  `json:"adress"` // Note: typo in original API "adress"
+}
