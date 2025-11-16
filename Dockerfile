@@ -1,5 +1,5 @@
 # Build stage
-FROM golang:1.23-alpine AS builder
+FROM golang:1.25-alpine AS builder
 
 # Install build dependencies
 RUN apk add --no-cache git
@@ -7,14 +7,17 @@ RUN apk add --no-cache git
 # Set working directory
 WORKDIR /app
 
+# Copy the local dependency
+COPY go_virk_updater /go_virk_updater
+
 # Copy go mod files
-COPY go.mod go.sum ./
+COPY go_virk_api/go.mod go_virk_api/go.sum ./
 
 # Download dependencies
 RUN go mod download
 
 # Copy source code
-COPY . .
+COPY go_virk_api/ .
 
 # Build the application
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o api cmd/api/main.go

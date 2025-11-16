@@ -1,8 +1,8 @@
 services:
   api:
     build:
-      context: .
-      dockerfile: Dockerfile
+      context: ..
+      dockerfile: go_virk_api/Dockerfile
     container_name: virk_api
     ports:
       - "8444:8444"
