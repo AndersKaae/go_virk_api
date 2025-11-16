@@ -31,7 +31,7 @@ WORKDIR /root/
 COPY --from=builder /app/api .
 
 # Expose port
-EXPOSE 8080
+EXPOSE 8444
 
 # Run the application
 CMD ["./api"]

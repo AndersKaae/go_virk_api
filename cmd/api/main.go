@@ -32,7 +32,7 @@ func main() {
 	pkg.LogInfo("Database connection established")
 
 	// Get port from environment or use default
-	port := getEnv("PORT", "8080")
+	port := getEnv("PORT", "8444")
 
 	// Setup routes
 	http.HandleFunc("/health", healthHandler)
@@ -121,7 +121,7 @@ func rootHandler(w http.ResponseWriter, r *http.Request) {
 			},
 		},
 	}
-	
+
 	encoder := json.NewEncoder(w)
 	encoder.SetIndent("", "  ")
 	encoder.Encode(response)
