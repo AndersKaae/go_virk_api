@@ -38,11 +38,12 @@ func main() {
 	http.HandleFunc("/", rootHandler)
 	http.HandleFunc("/api/stats/database", handlers.GetDatabaseStats)
 	http.HandleFunc("/api/stats/table", handlers.GetTableStats)
+	http.HandleFunc("/api/v1/feed", handlers.GetFeed)
 
 	// Start server
 	addr := fmt.Sprintf(":%s", port)
 	pkg.LogInfo(fmt.Sprintf("Server listening on %s", addr))
-	
+
 	if err := http.ListenAndServe(addr, nil); err != nil {
 		log.Fatal(err)
 	}
